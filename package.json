@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/react-ant-color-picker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Color picker for ant project.",
   "main": "dist/index.js",
   "scripts": {
