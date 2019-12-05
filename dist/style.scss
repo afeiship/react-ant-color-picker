@@ -7,11 +7,12 @@ $react-ant-color-picker-options: () !default;
   cursor: pointer;
   border-radius: 4px;
   border: 1px solid #ccc;
+  background: #fff;
   transition: all 0.3s;
 
   &:hover,
   &:active {
-    background: #fcfcfc;
+    background: #f1f1f1;
     border-color: darken(#ccc, 5%);
   }
 
@@ -27,7 +28,7 @@ $react-ant-color-picker-options: () !default;
   .is-label {
     width: 14px;
     height: 14px;
-    border-radius: 3px;;
+    border-radius: 3px;
     background: #eee;
     border: 1px solid #ccc;
   }

@@ -14,11 +14,13 @@ export default class extends Component {
   static propTypes = {
     className: PropTypes.string,
     placement: PropTypes.string,
+    label: PropTypes.string,
     value: PropTypes.string,
     onChange: PropTypes.func
   };
 
   static defaultProps = {
+    label: 'Select',
     value: '#fff',
     placement: 'bottom',
     onChange: noop
@@ -31,29 +33,48 @@ export default class extends Component {
     };
   }
 
+  shouldComponentUpdate(inProps) {
+    const { value } = inProps;
+    if (value !== this.state.value) {
+      this.setState({ value });
+    }
+    return true;
+  }
+
   onChange = (inEvent) => {
     const { value } = inEvent.target;
-    console.log('click me:', value);
-    this.setState({ value });
+    const { onChange } = this.props;
+    const target = { value };
+    this.setState(target, () => {
+      onChange({ target });
+    });
   };
 
   render() {
-    const { className, placement, value, onChange, ...props } = this.props;
+    const {
+      className,
+      placement,
+      value,
+      onChange,
+      label,
+      children,
+      ...props
+    } = this.props;
     const _value = this.state.value;
     return (
       <Popover
         placement={placement}
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, className)}
+        {...props}
         content={
           <ReactColorPicker
             value={_value}
             onChange={this.onChange}
             className={`${CLASS_NAME}__picker`}
           />
-        }
-        {...props}>
-        <span className="is-text">Select</span>
+        }>
+        <span className="is-text">{label}</span>
         <label className="is-label" style={{ background: _value }}></label>
       </Popover>
     );

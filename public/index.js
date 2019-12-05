@@ -4,11 +4,20 @@ import React from 'react';
 import './assets/style.scss';
 
 class App extends React.Component {
-  componentDidMount() {}
+  state = {
+    value: '#eee'
+  };
+
+  onChange = (inEvent) => {
+    const { value } = inEvent.target;
+    this.setState({ value });
+  };
+
   render() {
+    const _value = this.state.value;
     return (
-      <div className="app-container">
-        <ReactAntColorPicker />
+      <div className="app-container" style={{ background: _value }}>
+        <ReactAntColorPicker value={_value} onChange={this.onChange} />
       </div>
     );
   }
