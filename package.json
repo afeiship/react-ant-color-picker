@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/react-ant-color-picker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Color picker for ant project.",
   "main": "dist/index.js",
   "scripts": {
@@ -38,36 +38,34 @@
   },
   "homepage": "https://github.com/afeiship/react-ant-color-picker#readme",
   "devDependencies": {
-    "@babel/core": "^7.4.0",
+    "@babel/core": "^7.7.5",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-decorators": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
     "@feizheng/rake-git": "^1.2.0",
     "@feizheng/webpack-lib-kits": "^1.1.0",
-    "antd": "^3.26.0",
+    "antd": "^3.26.3",
     "babel-loader": "^8.0.5",
-    "cross-env": "^5.2.0",
+    "cross-env": "^6.0.3",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "express": "^4.16.4",
     "jest": "^24.5.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.16.4",
-    "react-testing-library": "^6.0.2",
-    "webpack": "^4.29.6",
+    "react-testing-library": "^8.0.1",
+    "webpack": "^4.41.3",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "@feizheng/noop": "^1.0.0",
-    "@feizheng/react-color-picker": "^1.0.0",
+    "@feizheng/react-color-picker": "^1.0.3",
     "classnames": "^2.2.6",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "prop-types": "^15.7.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
