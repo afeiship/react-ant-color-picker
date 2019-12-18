@@ -17,7 +17,9 @@ export default merge(baseConfig, {
   externals: externals.base({
     '@feizheng/noop': '@feizheng/noop',
     '@feizheng/react-color-picker': '@feizheng/react-color-picker',
-    antd: 'antd'
+    antd: 'antd',
+    color: 'color',
+    lodash: 'lodash'
   }),
   plugins: [plugins.clean(), plugins.copyStyles()]
 });

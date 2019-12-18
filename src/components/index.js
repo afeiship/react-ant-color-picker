@@ -6,6 +6,9 @@ import noop from '@feizheng/noop';
 import objectAssign from 'object-assign';
 import { Popover } from 'antd';
 import ReactColorPicker from '@feizheng/react-color-picker';
+import { SketchPicker } from 'react-color';
+import Color from 'color';
+import _ from 'lodash';
 
 const CLASS_NAME = 'react-ant-color-picker';
 
@@ -21,14 +24,22 @@ export default class extends Component {
 
   static defaultProps = {
     label: 'Select',
-    value: '#fff',
+    value: '#FFFFFF',
     placement: 'bottom',
     onChange: noop
   };
 
+  get presetColors() {
+    const { value } = this.state;
+    const colors = SketchPicker.defaultProps.presetColors;
+    const len = colors.length;
+    return _.uniq([Color(value).hex()].concat(colors)).slice(0, len);
+  }
+
   constructor(inProps) {
     super(inProps);
     this.state = {
+      presetColors: [],
       value: inProps.value
     };
   }
@@ -50,6 +61,10 @@ export default class extends Component {
     });
   };
 
+  onVisibleChange = (visible) => {
+    visible && this.setState({ presetColors: this.presetColors });
+  };
+
   render() {
     const {
       className,
@@ -61,9 +76,12 @@ export default class extends Component {
       ...props
     } = this.props;
     const _value = this.state.value;
+    const presetColors = this.state.presetColors;
+
     return (
       <Popover
         placement={placement}
+        onVisibleChange={this.onVisibleChange}
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, className)}
         {...props}
@@ -72,6 +90,7 @@ export default class extends Component {
             value={_value}
             onChange={this.onChange}
             className={`${CLASS_NAME}__picker`}
+            presetColors={presetColors}
           />
         }>
         <span className="is-text">{label}</span>

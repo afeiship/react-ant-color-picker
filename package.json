@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/react-ant-color-picker",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Color picker for ant project.",
   "main": "dist/index.js",
   "scripts": {
@@ -65,6 +65,8 @@
     "@feizheng/noop": "^1.0.0",
     "@feizheng/react-color-picker": "^1.0.3",
     "classnames": "^2.2.6",
+    "color": "^3.1.2",
+    "lodash": "^4.17.15",
     "prop-types": "^15.7.2"
   },
   "publishConfig": {
