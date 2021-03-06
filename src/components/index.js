@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from '@feizheng/noop';
-import objectAssign from 'object-assign';
+import noop from '@jswork/noop';
 import { Popover } from 'antd';
-import ReactColorPicker from '@feizheng/react-color-picker';
+import ReactColorPicker from '@jswork/react-color-picker';
 import { SketchPicker } from 'react-color';
 import Color from 'color';
-import _ from 'lodash';
+import nxUniqe from '@jswork/next-unique';
 
 const CLASS_NAME = 'react-ant-color-picker';
 
-export default class extends Component {
+export default class ReactAntColorPicker extends Component {
   static displayName = CLASS_NAME;
   static propTypes = {
+    /**
+     * The extended className for component.
+     */
     className: PropTypes.string,
-    placement: PropTypes.string,
+    /**
+     * The select label text.
+     */
     label: PropTypes.string,
+    /**
+     * The runtime color.
+     */
     value: PropTypes.string,
-    onChange: PropTypes.func
+    /**
+     * The handler when value chnage.
+     */
+    onChange: PropTypes.func,
+    /**
+     * The placement for popover.
+     */
+    placement: PropTypes.string
   };
 
   static defaultProps = {
@@ -33,7 +46,7 @@ export default class extends Component {
     const { value } = this.state;
     const colors = SketchPicker.defaultProps.presetColors;
     const len = colors.length;
-    return _.uniq([Color(value).hex()].concat(colors)).slice(0, len);
+    return nxUniqe([Color(value).hex()].concat(colors)).slice(0, len);
   }
 
   constructor(inProps) {

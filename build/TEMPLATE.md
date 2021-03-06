@@ -12,14 +12,7 @@ npm install -S @jswork/react-ant-color-picker
 ```
 
 ## properties
-| Name      | Type   | Required | Default   | Description                           |
-| --------- | ------ | -------- | --------- | ------------------------------------- |
-| className | string | false    | -         | The extended className for component. |
-| label     | string | false    | 'Select'  | The select label text.                |
-| value     | string | false    | '#FFFFFF' | The runtime color.                    |
-| onChange  | func   | false    | noop      | The handler when value chnage.        |
-| placement | string | false    | 'bottom'  | The placement for popover.            |
-
+__GENERATE_DOCS__
 
 ## usage
 1. import css
@@ -34,36 +27,7 @@ npm install -S @jswork/react-ant-color-picker
   ```
 2. import js
   ```js
-  import ReactDemokit from '@jswork/react-demokit';
-  import React from 'react';
-  import ReactDOM from 'react-dom';
-  import ReactAntColorPicker from '@jswork/react-ant-color-picker';
-  import './assets/style.scss';
-
-  class App extends React.Component {
-    state = {
-      value: '#eee'
-    };
-
-    onChange = (inEvent) => {
-      const { value } = inEvent.target;
-      this.setState({ value });
-    };
-
-    render() {
-      const _value = this.state.value;
-      return (
-        <ReactDemokit
-          className="p-3 app-container"
-          url="https://github.com/afeiship/react-ant-color-picker">
-          <ReactAntColorPicker value={_value} onChange={this.onChange} />
-        </ReactDemokit>
-      );
-    }
-  }
-
-  ReactDOM.render(<App />, document.getElementById('app'));
-
+__GENERATE_DAPP__
   ```
 
 ## documentation
