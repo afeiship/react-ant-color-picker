@@ -42,7 +42,7 @@ npm install -S @jswork/react-ant-color-picker
 
   class App extends React.Component {
     state = {
-      value: '#eee'
+      value: '#282c34'
     };
 
     onChange = (inEvent) => {
@@ -55,6 +55,7 @@ npm install -S @jswork/react-ant-color-picker
       return (
         <ReactDemokit
           className="p-3 app-container"
+          style={{ background: _value }}
           url="https://github.com/afeiship/react-ant-color-picker">
           <ReactAntColorPicker value={_value} onChange={this.onChange} />
         </ReactDemokit>

@@ -6,7 +6,7 @@ import './assets/style.scss';
 
 class App extends React.Component {
   state = {
-    value: '#eee'
+    value: '#282c34'
   };
 
   onChange = (inEvent) => {
@@ -19,6 +19,7 @@ class App extends React.Component {
     return (
       <ReactDemokit
         className="p-3 app-container"
+        style={{ background: _value }}
         url="https://github.com/afeiship/react-ant-color-picker">
         <ReactAntColorPicker value={_value} onChange={this.onChange} />
       </ReactDemokit>
